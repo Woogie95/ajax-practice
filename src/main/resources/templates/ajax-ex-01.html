@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex01</title>
+</head>
+<!--jQueryCDN 주소-->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<body>
+<button onclick="ex01Fn()">ex01 함수 호출</button>
+</body>
+<script>
+    const ex01Fn = () => {
+        $.ajax({
+            // 요청 박식: get
+            // 요청 주소: /ex01
+            type: "get",
+            url: "/ex01",
+            success: function (res) { // 요청 성공 했을 때 실행 구간
+                console.log("성공", res)
+            },
+            error: function () { // 요청 실패 했을 때 실행 구간
+                console.log("실패")
+            },
+        });
+    }
+</script>
+
+</html>
