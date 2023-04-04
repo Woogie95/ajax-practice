@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ex01</title>
+    <title>ex02</title>
 </head>
 <!--jQueryCDN 주소-->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <body>
-<button onclick="ex01Fn()">ex01 함수 호출</button>
+<button onclick="ex02Fn()">ex02 함수 호출</button>
 </body>
 <script>
-    const ex01Fn = () => {
+    const ex02Fn = () => {
         $.ajax({
-            // 요청 방식: get
-            // 요청 주소: /ex01
-            type: "get",
-            url: "/ex01",
-            success: function (res) { // 요청 성공 했을 때 실행 구간
+            // 요청 방식: post
+            // 요청 주소: /ex02
+            type: "post",
+            url: "/ex02"식,
+            success: function (res) { // 요청 성공 했을 때 실행 구간 (파라미터로 받는 res => 컨트롤러에서 넘오온 리턴값이다.)
                 console.log("성공", res)
             },
             error: function () { // 요청 실패 했을 때 실행 구간
