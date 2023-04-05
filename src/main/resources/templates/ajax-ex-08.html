@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex08</title>
+</head>
+<!--jQueryCDN 주소-->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<body>
+<button onclick="ex08Fn()">ex08 함수 호출</button>
+</body>
+<script>
+    const ex08Fn = () => {
+        const val = "Hello Spring Boot!"
+
+        const params = {
+            "param1": val,
+            "param2": "성욱",
+        };
+
+        $.ajax({
+            type: "post",  // 요청 방식
+            url: "/ex08", // 요청 주소
+            data: JSON.stringify(params),
+            contentType: "Application/json",
+
+            success: function (res) {
+                console.log("성공", res)
+            },
+            error: function () {
+                console.log("실패")
+            },
+        });
+    }
+</script>
+
+</html>

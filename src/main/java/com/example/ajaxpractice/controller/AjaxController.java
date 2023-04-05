@@ -4,6 +4,9 @@ import com.example.ajaxpractice.dto.AjaxDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class AjaxController {
     @GetMapping("/ex01")
@@ -48,6 +51,21 @@ public class AjaxController {
     public @ResponseBody AjaxDTO ex07(@RequestBody AjaxDTO ajaxDTO) {
         System.out.println("ajaxDTO = " + ajaxDTO);
         return ajaxDTO;
+    }
+
+    private List<AjaxDTO> addDTOList() {
+        List<AjaxDTO> dtoList = new ArrayList<>();
+        dtoList.add(new AjaxDTO("성욱", "111"));
+        dtoList.add(new AjaxDTO("성준", "222"));
+        return dtoList;
+    }
+
+    @PostMapping("/ex08")
+    public @ResponseBody List<AjaxDTO> ex08(@RequestBody AjaxDTO ajaxDTO) {
+        System.out.println("ajaxDTO = " + ajaxDTO);
+        List<AjaxDTO> dtoList = addDTOList();
+        dtoList.add(ajaxDTO);
+        return dtoList;
     }
 
 }
