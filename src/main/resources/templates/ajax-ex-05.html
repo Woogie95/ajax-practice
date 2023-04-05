@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ex04</title>
+    <title>ex05</title>
 </head>
 <!--jQueryCDN 주소-->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <body>
-<button onclick="ex04Fn()">ex04 함수 호출</button>
+<button onclick="ex05Fn()">ex05 함수 호출</button>
 </body>
 <script>
-    const ex04Fn = () => {
+    const ex05Fn = () => {
         const val = "Hello Spring Boot!"
 
         const params = {
             "param1": val,
-            "param2": "안녕",
+            "param2": "성욱",
         };
 
         $.ajax({
-            type: "post",  // 요청 방식: post
-            url: "/ex04", // 요청 주소: /ex03
+            type: "get",  // 요청 방식
+            url: "/ex05", // 요청 주소
             data: params,
 
             success: function (res) {

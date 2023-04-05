@@ -1,10 +1,8 @@
 package com.example.ajaxpractice.controller;
 
+import com.example.ajaxpractice.dto.AjaxDTO;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AjaxController {
@@ -33,4 +31,17 @@ public class AjaxController {
         System.out.println("param1 = " + param1 + ", param2 = " + param2);
         return "ex04 메소드 호출";
     }
+
+    @GetMapping("/ex05")
+    public @ResponseBody AjaxDTO ex05(@ModelAttribute AjaxDTO ajaxDTO) {
+        System.out.println("ajaxDTO = " + ajaxDTO);
+        return ajaxDTO;
+    }
+
+    @PostMapping("/ex06")
+    public @ResponseBody AjaxDTO ex06(@ModelAttribute AjaxDTO ajaxDTO) {
+        System.out.println("ajaxDTO = " + ajaxDTO);
+        return ajaxDTO;
+    }
+
 }

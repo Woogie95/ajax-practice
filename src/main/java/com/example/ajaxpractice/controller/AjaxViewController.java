@@ -2,6 +2,7 @@ package com.example.ajaxpractice.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AjaxViewController {
@@ -24,4 +25,15 @@ public class AjaxViewController {
     public String ajaxEx04() {
         return "ajax-ex-04";
     }
+
+    @GetMapping("/ajax-ex-05")
+    public String ajaxEx05() {
+        return "ajax-ex-05";
+    }
+
+    @PostMapping("/ajax-ex-06")
+    public String ajaxEx06() {
+        return "ajax-ex-06";
+    }
+
 }
